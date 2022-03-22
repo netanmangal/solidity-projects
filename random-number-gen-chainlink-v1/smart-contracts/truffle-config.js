@@ -18,7 +18,11 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+require("dotenv").config();
+
+const MNEMONIC = process.env.MNEMONIC;
+const  KOVANRPCURL = process.env.KOVANRPCURL;
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -35,6 +39,13 @@ module.exports = {
    */
 
   networks: {
+    kovan: {
+      provider: () => new HDWalletProvider(MNEMONIC, KOVANRPCURL),
+      network_id: 42,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    }
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
