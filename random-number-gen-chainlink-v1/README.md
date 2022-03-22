@@ -15,15 +15,25 @@ Process:
 1. Deploy the contract to Kovan testnet.
 ![Deploy Contract](./images/1-deploy-contract.png)
 
+<br />
+
 2. Try calling the `requestRandomNumber` function and you will see the transaction reverted because, the smart contract has not LINK tokens yet. 
 `Fail with error 'RandomNumberConsumer: Not enough LINK in this contract - fill in the balance.'`
 ![Error](./images/2-error-no-link-tokens.png)
 
+<br />
+
 3. So, send LINK tokens to smart contract's address.
 ![Fill Contract](./images/3-token-transfers.png)
+
+<br />
 
 4. Call `requestRandomNumber` function.
 ![Call requestRandomNumber](./images/4-requestRandomNumber.png)
 
+<br />
+
 5. After some time, `VRF Coordinator` will callback `fulfillRandomness` function.
 ![Callback to fulfillRandomness](./images/5-callback.png)
+
+<br />
