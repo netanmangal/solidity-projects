@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-web3");
+require("dotenv").config();
 
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -24,5 +25,12 @@ module.exports = {
       {version: "0.8.0"},
       {version: "0.8.7"}
     ]
+  },
+  networks: {
+    hardhat: {
+      forking: {
+        url: process.env.HTTPS_KOVAN_RPC_URL,
+      }
+    }
   }
 };
