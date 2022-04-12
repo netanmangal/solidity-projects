@@ -39,3 +39,9 @@ Process:
 ![Callback to fulfillRandomness](./images/5-callback.png)
 
 <br />
+
+6. While testing in Hardhat Network, no `fulfillRequest` function is called as a callback to set the value of random number in contract.   
+So I performed the test on KOVAN Network and it did succedded.
+![Test on Kovan Network + FulfillRequest function callback](./images/6-test-response-on-kovan-network.png)
+ 
+<br />
