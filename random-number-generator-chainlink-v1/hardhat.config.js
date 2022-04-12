@@ -30,7 +30,12 @@ module.exports = {
     hardhat: {
       forking: {
         url: process.env.HTTPS_KOVAN_RPC_URL,
+        enabled: false
       }
+    },
+    kovan: {
+      url: process.env.HTTPS_KOVAN_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY]
     }
   },
   mocha: {
