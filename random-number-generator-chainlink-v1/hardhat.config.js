@@ -32,5 +32,8 @@ module.exports = {
         url: process.env.HTTPS_KOVAN_RPC_URL,
       }
     }
+  },
+  mocha: {
+    timeout: 400000
   }
 };
