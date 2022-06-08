@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res, next) => {
     console.log(req.contractInstance);
-    res.send("Welcome to homepage.");
+    res.send({success: true, msg: "Welcome to homepage.", contractAddress: req.contractInstance._address});
 });
 
 app.listen("3000", async () => {
