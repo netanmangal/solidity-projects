@@ -31,9 +31,13 @@ app.get("/", (req, res, next) => {
 });
 
 app.listen("3000", async () => {
-    web3 = await initWeb3();
-    contractInstance = await initContract(web3);
-    accounts = await web3.eth.getAccounts();
+    try {
+        web3 = await initWeb3();
+        contractInstance = await initContract(web3);
+        accounts = await web3.eth.getAccounts();
+    } catch(e) {
+        console.log(e);
+    }
 
     console.log("Server running on port 3000.");
 });
