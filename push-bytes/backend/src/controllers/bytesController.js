@@ -2,8 +2,11 @@ const hex = require('string-hex');
 
 async function getData(req, res, next) {
     try {
-        const response = await req.contractInstance.methods.hash(req.query?.key).call();
-        res.status(200).send({ success: true, msg: response });
+        const response_hex = await req.contractInstance.methods.hash(req.query?.key).call();
+        res.status(200).send({ success: true, msg: {
+            hexData: response_hex, 
+            data: JSON.parse( req.web3.utils.hexToAscii(response_hex) )
+        } });
     } catch(e) {
         console.log("Point 1 error " + e);
         res.status(500).send({ success: false, msg: e });
