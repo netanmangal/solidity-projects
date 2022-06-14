@@ -7,8 +7,8 @@
 2. Add `Arbitrum (public testnet)` network to Metamask ->  [https://developer.offchainlabs.com/docs/public_testnet](https://developer.offchainlabs.com/docs/public_testnet).
 3. I'm using `0x65a3fE4a37Be6Df8d98e113A5c4DA8F3f8B72C44` address for testing and deployment. To see transactions, open `rinkeby-arbitrum` explorer: [https://rinkeby-explorer.arbitrum.io/](https://rinkeby-explorer.arbitrum.io/).
 
-Right now, I am having about `19 ETH` on `Rinkeby testnet` and `0 ETH` on `Arbitrum One`  
-[arbitrum rinkeby explorer](./images/arb-rink-1.png)
+Right now, I am having about `19 ETH` on `Rinkeby testnet` and `0 ETH` on `Arbitrum One`    
+<img alt="arbitrum rinkeby explorer" src="./images/arb-rink-1.png" width="600">   
 4.
 
 
