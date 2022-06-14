@@ -9,9 +9,13 @@
 
 Right now, I am having about `19 ETH` on `Rinkeby testnet` and `0 ETH` on `Arbitrum One`    
 <img alt="arbitrum rinkeby explorer" src="./images/arb-rink-1.png" width="600">   
-4.
+4. Since, I don't have any balance on `Arbitrum One` chain, I'll use [Arbitrum Bridge](https://bridge.arbitrum.io/) to transfer ETH from `rinkeby` to `arbitrum one` chain.   
+5. Connect the Metamask wallet and enter the ETH you want to transfer to your address on arbitrum one. Then press `Deposit button`. It will pop-up metamask to sign the transaction.   
+<img alt="arbitrum rinkeby explorer" src="./images/arb-rink-2.png" width="600">   
 
-
+<br />
+<br />
+<br />
 
 # Basic Sample Hardhat Project
 
