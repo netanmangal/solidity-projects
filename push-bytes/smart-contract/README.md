@@ -3,6 +3,9 @@
 
 ## Steps for deploying on Arbitrum:
 
+1. Install Arbitrum on local machine -> [https://developer.offchainlabs.com/docs/installation](https://developer.offchainlabs.com/docs/installation)
+2. Add `Arbitrum (public testnet)` network to Metamask ->  [https://developer.offchainlabs.com/docs/public_testnet](https://developer.offchainlabs.com/docs/public_testnet)
+3. 
 
 # Basic Sample Hardhat Project
 
