@@ -22,6 +22,8 @@ Right now, I am having about `19 ETH` on `Rinkeby testnet` and `0 ETH` on `Arbit
 #### Arbitrum Contract Address: [0xcac7262e2466b120de8208c1372311cf57a02cfb](https://rinkeby-explorer.arbitrum.io/address/0xcac7262e2466b120de8208c1372311cf57a02cfb)    
 #### Kovan Contract Address: [0x5a5a1047b0fbeed73e23a68d42a5d28ad20e7171](https://kovan.etherscan.io/address/0x5a5a1047b0fbeed73e23a68d42a5d28ad20e7171)
 
+<br />
+
 Gas Consumed on Arbitrum: **0.00009 ETH**    
 Gas Consumed on Kovan: **0.0014 ETH**    
 
