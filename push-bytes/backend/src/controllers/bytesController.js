@@ -5,7 +5,7 @@ async function getData(req, res, next) {
         const response_hex = await req.contractInstance.methods.hash(req.query?.key).call();
         res.status(200).send({ success: true, msg: {
             hexData: response_hex, 
-            data: JSON.parse( req.web3.utils.hexToAscii(response_hex) )
+            data: response_hex ? JSON.parse( req.web3.utils.hexToAscii(response_hex) ) : null
         } });
     } catch(e) {
         console.log("Point 1 error " + e);
