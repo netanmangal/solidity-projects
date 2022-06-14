@@ -11,7 +11,19 @@ Right now, I am having about `19 ETH` on `Rinkeby testnet` and `0 ETH` on `Arbit
 <img alt="arbitrum rinkeby explorer" src="./images/arb-rink-1.png" width="600">   
 4. Since, I don't have any balance on `Arbitrum One` chain, I'll use [Arbitrum Bridge](https://bridge.arbitrum.io/) to transfer ETH from `rinkeby` to `arbitrum one` chain.   
 5. Connect the Metamask wallet and enter the ETH you want to transfer to your address on arbitrum one. Then press `Deposit button`. It will pop-up metamask to sign the transaction.   
-<img alt="arbitrum rinkeby explorer" src="./images/arb-rink-2.png" width="600">   
+<img alt="arbitrum rinkeby explorer" src="./images/arb-rink-2.png" width="600"> 
+6. After recieving ETH in arbitrum one chain, deploy the contract.  
+7. I'm using [hardhat]() for deploying and Alchemy's RPC url.  
+8. Here is the Contract -> https://rinkeby-explorer.arbitrum.io/address/0xcac7262e2466b120de8208c1372311cf57a02cfb    
+9. Similar contract, I deployed on Kovan network and results were preety clear. Gas consumed on `Kovan Network` was `0.0014 ETH` whereas on `Arbitrum-Rinkeby` was `0.00009 ETH`.
+
+<br />
+
+Arbitrum Contract Address: [0xcac7262e2466b120de8208c1372311cf57a02cfb](https://rinkeby-explorer.arbitrum.io/address/0xcac7262e2466b120de8208c1372311cf57a02cfb)
+Kovan Contract Address: [0x5a5a1047b0fbeed73e23a68d42a5d28ad20e7171](https://kovan.etherscan.io/address/0x5a5a1047b0fbeed73e23a68d42a5d28ad20e7171)
+
+Gas Consumed on Arbitrum: **0.00009 ETH**
+Gas Consumed on Kovan: **0.0014 ETH**   
 
 <br />
 <br />
