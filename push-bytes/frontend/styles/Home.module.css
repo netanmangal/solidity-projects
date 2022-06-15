@@ -38,6 +38,7 @@
   background-image: linear-gradient(90deg, #3512b2, #d18873);
   width: 100%;
   cursor: pointer;
+  min-width: 200px;
 }
 
 .error {
