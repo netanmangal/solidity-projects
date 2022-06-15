@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import {ToastContainer, toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import styles from '../styles/Home.module.css';
 import detailStyles from '../styles/Details.module.css';
@@ -14,6 +16,7 @@ const PushData = () => {
             <button className={`${detailStyles.purpleButton}`} onClick={() => {
                 setKey("");
                 setValue("");
+                setMsg("");
             }}>
                 Reset Values
             </button>
@@ -48,11 +51,19 @@ const PushData = () => {
             </div>
 
             {
-                msg ? msg : null
+                msg ? "{ txHash: " + msg + "}" : null
             }
 
             <div className={detailStyles.fotter}>
                 <button className={styles.gradientButton} onClick={async () => {
+
+                    if (!key || !value) {
+                        toast.error("Input key and value");
+                        return;
+                    }
+
+                    toast("Posting data...");
+
                     const response = await (await fetch(`http://localhost:3000/data/push`, {
                         method: "POST",
                         body: JSON.stringify({ key, value: value }),
@@ -61,15 +72,15 @@ const PushData = () => {
                     })).json()
 
                     if (response.success) {
-                        // posting data toast
-
                         if (response.msg) {
-                            setMsg(JSON.stringify(response.msg.data));
+                            setMsg(JSON.stringify(response.msg.transactionHash));
+                            toast.success("Data posted successfully.");
                         } else {
                             setMsg("No response after request");
+                            toast.error("Error occured.");
                         }
                     } else {
-                        // error toast
+                        toast.error("Error occured.");
                     }
                 }}>
                     Post key-value pair

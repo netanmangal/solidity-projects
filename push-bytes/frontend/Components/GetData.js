@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from "react-toastify";
 
 import styles from '../styles/Home.module.css';
 import detailStyles from '../styles/Details.module.css';
@@ -41,17 +42,18 @@ const GetData = () => {
 
             <div className={detailStyles.fotter}>
                 <button className={styles.gradientButton} onClick={async () => {
-                    const response = await ( await fetch(`http://localhost:3000/data/get?key=${key}`) ).json();
-                    if (response.success) {
-                        // fetching response toast
+                    toast("Fetching data...");
+                    
+                    const response = await (await fetch(`http://localhost:3000/data/get?key=${key}`)).json();
 
+                    if (response.success) {
                         if (response.msg.data) {
-                            setValue(JSON.stringify( response.msg.data ));                            
+                            setValue(JSON.stringify(response.msg.data));
                         } else {
-                            setValue("No value found");
+                            setValue("No value found.");
                         }
                     } else {
-                        // error toast
+                        toast.error("Error occured.");
                     }
                 }}>
                     Fetch me value.
