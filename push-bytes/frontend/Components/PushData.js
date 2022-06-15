@@ -55,15 +55,11 @@ const PushData = () => {
                 <button className={styles.gradientButton} onClick={async () => {
                     const response = await (await fetch(`http://localhost:3000/data/push`, {
                         method: "POST",
-                        body: JSON.stringify({
-                            key,
-                            value: JSON.stringify(value)
-                        }),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        mode: "no-cors"
-                    })).json();
+                        body: JSON.stringify({ key, value: value }),
+                        headers: { 'Content-Type': 'application/json' },
+                        mode: "cors"
+                    })).json()
+
                     if (response.success) {
                         // posting data toast
 
