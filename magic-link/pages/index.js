@@ -38,7 +38,7 @@ const Home = () => {
 
     init();
 
-  }, [state.isLogin]);
+  }, []);
 
   return (
     <div className={styles.backgroundParent}>
