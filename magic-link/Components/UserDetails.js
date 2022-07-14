@@ -1,18 +1,15 @@
-import { useState } from 'react';
-
 import styles from '../styles/Home.module.css';
 import detailStyles from '../styles/Details.module.css';
 
-const UserDetails = () => {
-    let [ value, setValue ] = useState("user");
+const UserDetails = ({state, setState}) => {
+
+    let value = "ABC Value";
 
     return (
         <div className={detailStyles.bigCard}>
-            <h4>Welcome To TheCard!</h4>
-            <button className={`${detailStyles.purpleButton}`} onClick={() => {
-                setValue("");
-            }}>
-                Reset Value
+            <h4>Welcome To LoginScreen</h4>
+            <button className={`${detailStyles.purpleButton}`} onClick={(e) => logoutHandler(e, state, setState)}>
+                LogOut
             </button>
             <p className={detailStyles.subHeader}>Details:</p>
 
@@ -51,6 +48,22 @@ const UserDetails = () => {
             </div>
         </div>
     );
+}
+
+const logoutHandler = async (e, state, setState) => {    
+    setState({
+        ...state,
+        loading: true
+    });
+
+    await state.magic.user.logout();
+
+    setState({
+        ...state,
+        loading: false
+    });
+
+    window.location.reload();
 }
 
 export default UserDetails;

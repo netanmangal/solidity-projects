@@ -21,17 +21,24 @@ const Home = () => {
     const init = async () => {
       const magic = new Magic('pk_live_5618E4ECEC07A6F7');
       const isLogin = await magic.user.isLoggedIn();
+
+      let userDetails = {};
+      if (isLogin) {
+        userDetails = await magic.user.getMetadata();
+      }
+
       await setState({
         ...state,
         magic: magic,
         loading: false,
-        isLogin: isLogin
+        isLogin: isLogin,
+        userDetails: userDetails
       });
     }
 
     init();
 
-  }, []);
+  }, [state.isLogin]);
 
   return (
     <div className={styles.backgroundParent}>
@@ -42,7 +49,7 @@ const Home = () => {
         state.loading ?
           <Loader /> :
           state.isLogin ?
-            <UserDetails /> :
+            <UserDetails state={state} setState={setState} /> :
             <Login state={state} setState={setState} />
       }
     </div>
