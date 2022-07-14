@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div className={styles.backgroundParent}>
       <Head>
-        <title>Hi this is title</title>
+        <title>Magic Link Demo</title>
       </Head>
       {
         state.loading ?
