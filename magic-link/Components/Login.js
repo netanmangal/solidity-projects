@@ -43,6 +43,8 @@ const loginHandler = async (e, state, setState) => {
         ...state,
         loading: false
     });
+
+    window.location.reload();
 }
 
 export default Login;
