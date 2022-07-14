@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css';
 import detailStyles from '../styles/Details.module.css';
 
 const Login = ({state, setState}) => {
-
     return (
         <div className={styles.card}>
             <h4>Welcome To TheCard!</h4>
@@ -22,14 +21,28 @@ const Login = ({state, setState}) => {
             />
 
             <div className={detailStyles.fotter}>
-                <button className={styles.gradientButton} onClick={() => {
-                    console.log("Button pressed");
-                }}>
+                <button className={styles.gradientButton} onClick={(e) => loginHandler(e, state, setState)}>
                     Login
                 </button>
             </div>
         </div>
     );
+}
+
+const loginHandler = async (e, state, setState) => {
+    e.preventDefault();
+    
+    setState({
+        ...state,
+        loading: true
+    });
+
+    await state.magic.auth.loginWithMagicLink({email: state.email, showUI: true});
+
+    setState({
+        ...state,
+        loading: false
+    });
 }
 
 export default Login;

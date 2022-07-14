@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 
 const Home = () => {
   const [state, setState] = useState({
+    magic: null,
     loading: true,
     isLogin: false,
     email: "",
@@ -22,11 +23,10 @@ const Home = () => {
       const isLogin = await magic.user.isLoggedIn();
       await setState({
         ...state,
+        magic: magic,
         loading: false,
         isLogin: isLogin
       });
-
-      console.log(state);
     }
 
     init();
