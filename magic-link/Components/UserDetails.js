@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import detailStyles from '../styles/Details.module.css';
 
-const Card1 = () => {
+const UserDetails = () => {
     let [ value, setValue ] = useState("user");
 
     return (
@@ -53,4 +53,4 @@ const Card1 = () => {
     );
 }
 
-export default Card1;
+export default UserDetails;

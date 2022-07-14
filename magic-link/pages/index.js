@@ -1,16 +1,50 @@
 import Head from 'next/head';
+import { Magic } from 'magic-sdk';
 
 import styles from '../styles/Home.module.css';
-import Card1 from '../Components/Card1';
+import Login from '../Components/Login';
+import Loader from '../Components/Loader';
+import UserDetails from '../Components/UserDetails';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [state, setState] = useState({
+    loading: true,
+    isLogin: false,
+    email: "",
+    userDetails: {}
+  });
+
+  useEffect(() => {
+
+    const init = async () => {
+      const magic = new Magic('pk_live_5618E4ECEC07A6F7');
+      const isLogin = await magic.user.isLoggedIn();
+      await setState({
+        ...state,
+        loading: false,
+        isLogin: isLogin
+      });
+
+      console.log(state);
+    }
+
+    init();
+
+  }, []);
+
   return (
     <div className={styles.backgroundParent}>
       <Head>
         <title>Hi this is title</title>
       </Head>
-      <p>Hi</p>
-      <Card1 />
+      {
+        state.loading ?
+          <Loader /> :
+          state.isLogin ?
+            <UserDetails /> :
+            <Login state={state} setState={setState} />
+      }
     </div>
   );
 }
