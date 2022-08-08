@@ -10,6 +10,8 @@
     ),
     linear-gradient(0deg, #fff, #fff);
     align-content: center;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
 }
 .card {
   width: 250px;
